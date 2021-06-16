@@ -1,4 +1,4 @@
-#pip install toascii
+#pip install to-ascii
 #pip install pywinauto
 
 from toascii import VideoConverter

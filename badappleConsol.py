@@ -1,4 +1,8 @@
+#pip install to-ascii
+#pip install subprocess
+
 from toascii import VideoConverter
+import subprocess as sp
 import os
 import time
 

@@ -1,5 +1,6 @@
-#pip install toascii
-#pip install pywinauto
+#pip install to-ascii
+#pip install pyautogui
+#pip install subprocess
 
 from toascii import VideoConverter
 import time
@@ -27,8 +28,8 @@ f.close()
 print("Notepad write Complete")
 
 print("start the badapple")
-#os.system("badapple.mp4")
-#time.sleep(0.01)
+os.system("badapple.mp4")
+time.sleep(0.01)
 #os.system(txtFileName)
 sp.Popen(["notepad.exe", txtFileName], stdout=sp.PIPE, shell=True)
 time.sleep(1)
@@ -44,7 +45,7 @@ while a < b:
     start = time.time()
     pyautogui.press('enter', presses=int(30))
     delta = start - time.time()
-    time.sleep(1 - delta)
+    #time.sleep(1 - delta)
     print("Now frame : " + str(int(a)) + "delta : " + str(delta))
     #pyautogui.keyDown("enter")
     a += 30
