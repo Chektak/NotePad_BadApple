@@ -9,7 +9,7 @@ import subprocess as sp
 import os
 videoFileName = "../badapple.mp4"
 txtFileName = "BadTxt.txt"
-videoScale = 0.1
+videoScale = 0.4
 v = VideoConverter(videoFileName, videoScale, 2.0, "high")
 print("Converting video...")
 v.convert()
