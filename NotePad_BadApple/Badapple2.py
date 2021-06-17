@@ -96,11 +96,10 @@ while a < asciiFrameLength:
     if(aError >= 1) :#frame error correction
         mouse.scroll(0, -int((asciiVideoHeight + 6)/3) * int(aError))
         aError -= int(aError)
-    if a >= 386:
-        if a >= 436 :
+    if a >= 390:
+        if a >= 440 :
             #os.system("cls")
             if consoleState == 0 :
-                #os.system("color 70") #colsole white
                 os.system("color 0f") #colsole black
                 consoleState = 1
             else:
@@ -119,30 +118,44 @@ while a < asciiFrameLength:
                                         os.system("color f0") #colsole white
                                         consoleState = 4
                                     else :
-                                        if (a >= 2445) :
-                                            if (a >= 2495) :
+                                        if (a >= 2440) :
+                                            if (a >= 2490) :
                                                 if consoleState == 4 :
                                                     os.system("color 0f") #colsole black(basic)
                                                     consoleState = 5
                                                 else :
-                                                    if (a >= 3277) :
-                                                        if (a >= 3327) :
+                                                    if (a >= 3272) :
+                                                        if (a >= 3322) :
                                                             if (consoleState == 5) :
                                                                 os.system("color f0") #colsole white
                                                                 consoleState = 6
                                                             else :
-                                                                if (a >= 5360) :
-                                                                    if(a >= 5410) :
-                                                                        if (consoleState == 6) :
-                                                                            os.system("color 0f") #colsole black
-                                                                            consoleState = 7
+                                                                if (a >= 4260) :
+                                                                    if (consoleState == 6) :
+                                                                        os.system("color 0f") #colsole black
+                                                                        consoleState = 7
+                                                                    else :
+                                                                        if(a >= 4620) :
+                                                                            if (consoleState == 7) :
+                                                                                os.system("color f0") #colsole white
+                                                                                consoleState = 8
+                                                                            else :
+                                                                                if (a >= 5360) :
+                                                                                    if(a >= 5410) :
+                                                                                        if (consoleState == 8) :
+                                                                                            os.system("color 0f") #colsole black
+                                                                                            consoleState = 9
+                                                                                        else :
+                                                                                            print(consoleVideo.ascii_frames[int(a)].rstrip("\n")) 
+                                                                                    else :
+                                                                                        print("\n")
+                                                                                else :
+                                                                                    print(consoleVideo.ascii_frames[int(a)].rstrip("\n")) 
                                                                         else :
                                                                             print(consoleVideo.ascii_frames[int(a)].rstrip("\n")) 
-                                                                    else :
-                                                                        print("\n")
+                                                                        #print("Now frame : " + str(int(a)) + " delta : " + str(delta))
                                                                 else :
-                                                                   #print(consoleVideo.ascii_frames[int(a)].rstrip("\n")) 
-                                                                   print("Now frame : " + str(int(a)) + " delta : " + str(delta))
+                                                                   print(consoleVideo.ascii_frames[int(a)].rstrip("\n")) 
                                                         else :
                                                             #print("\n")
                                                             print(consoleVideo.ascii_frames[int(a)].rstrip("\n"))
@@ -151,8 +164,8 @@ while a < asciiFrameLength:
                                                         print(consoleVideo.ascii_frames[int(a)].rstrip("\n"))
                                                         #print("Now frame : " + str(int(a)) + " delta : " + str(delta))
                                             else :
-                                                print("\n")
-                                                #print(consoleVideo.ascii_frames[int(a)].rstrip("\n"))
+                                                #print("\n")
+                                                print(consoleVideo.ascii_frames[int(a)].rstrip("\n"))
                                                 #print("Now frame : " + str(int(a)) + " delta : " + str(delta))
                                         else :
                                             print(consoleVideo.ascii_frames[int(a)].rstrip("\n"))
@@ -163,13 +176,15 @@ while a < asciiFrameLength:
                             print(consoleVideo.ascii_frames[int(a)].rstrip("\n"))
                 else :
                     print(consoleVideo.ascii_frames[int(a)].rstrip("\n"))
+                    #print("Now frame : " + str(int(a)) + " delta : " + str(delta))
+                    #print("aError : " + str(aError))
         else :
             print("\n")
     else :
         print("Now frame : " + str(int(a)) + " delta : " + str(delta))
 
     #aDelta = 1 #+ 30 * (0 if delay >= 0 else -delay)
-    aError += 30 * (0 if delay >= 0 else -delay)
+    aError += (0 if delay >= 0 else -delay) / 30
     #a += aDelta
     a += 1
     delay = spf - delta 
