@@ -11,15 +11,16 @@ import os
 videoFileName = "C:/Users/dbstn/Desktop/PythonBadApple/badapple.mp4"
 txtFileName = "BadApple.txt"
 gradient = "high"
-videoScale = 0.15
+videoScale = 0.2
 a = 0.0
 asciiFrameLength = 0.0
 asciiVideoHeight = 0.0
 fps = 30
 spf = 1 / fps
 
-os.system("chcp 437")
 
+os.system("chcp 437")
+os.system("title C:\WINDOWS\cmd.exe")
 
 #Create a text file
 try:
@@ -67,8 +68,6 @@ consoleVideoScale = 0.1
 if(isBadApple) :
     consoleVideo = VideoConverter(videoFileName, consoleVideoScale, 2.0, gradient)
     consoleVideo.convert()
-os.system("more /c")
-print(consoleVideo.ascii_frames[int(1000)].rstrip("\n")) 
 
 sp.Popen(["notepad.exe", txtFileName], stdout=sp.PIPE, shell=True)
 os.system("pause")
@@ -78,7 +77,7 @@ print("start the badapple")
 
 sp.Popen(videoFileName, stdout=sp.PIPE, shell=True)
 #time.sleep(1.35)
-time.sleep(1.2)
+time.sleep(0.8)
 
 #At this time, you need to place the mouse cursor over the notepad to play Notepad Bad Apple.
 
@@ -92,7 +91,7 @@ sleepError = 0.0
 mouse = Controller()
 mouse.scroll(0, -2) #skip header(Scroll function scrolls in a 1:3 line ratio)
 
-isBlackConsole = True
+isBlackConsole = False
 while a < asciiFrameLength:
     start = time.time()
 
@@ -102,10 +101,10 @@ while a < asciiFrameLength:
         print("\n")
     elif a >= 444 :
         #print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-        #os.system("cls")
+
+        os.system("cls")
         print(consoleVideo.ascii_frames[int(a)].rstrip("\n")) 
     else :
-        os.system("title BadApple.exe")
         print("Now frame : " + str(int(a)) + " delta : " + str(delta))
 
     if   not isBlackConsole and a >= 5410 : 
@@ -114,46 +113,40 @@ while a < asciiFrameLength:
     elif isBlackConsole     and a >= 4640 and a < 5410: 
         os.system("color f0")           #aya		    w
         isBlackConsole = not isBlackConsole
-    elif not isBlackConsole and a >= 4260 and a < 4640 : 
+    elif not isBlackConsole and a >= 4262 and a < 4640 : 
         os.system("color 0f")           #yukari         b
         isBlackConsole = not isBlackConsole
-    elif isBlackConsole     and a >= 3770 and a < 4260 : 
+    elif isBlackConsole     and a >= 3770 and a < 4262 : 
         os.system("color f0")           #momizi         w
         isBlackConsole = not isBlackConsole
-    elif not isBlackConsole and a >= 3675 and a < 3770 : 
+    elif not isBlackConsole and a >= 3677 and a < 3770 : 
         os.system("color 0f")           #reisen		    b
         isBlackConsole = not isBlackConsole
-    elif isBlackConsole     and a >= 3650 and a < 3675 : 
+    elif isBlackConsole     and a >= 3651 and a < 3677 : 
         os.system("color f0")           #tewi		    w
         isBlackConsole = not isBlackConsole
-    elif not isBlackConsole and a >= 3625 and a < 3647 : 
+    elif not isBlackConsole and a >= 3625 and a < 3651 : 
         os.system("color 0f")           #yakumo ran     b
         isBlackConsole = not isBlackConsole
-    elif isBlackConsole     and a >= 3320 and a < 3625 : 
+    elif isBlackConsole     and a >= 3323 and a < 3625 : 
         os.system("color f0")           #kaguya	        w
         isBlackConsole = not isBlackConsole
-
-    # elif not isBlackConsole and a >= 2490 and a < 3322: 
-    #     os.system("color 0f")         #shiki	        b
-    #     isBlackConsole = not isBlackConsole
-    # elif not isBlackConsole and a >= 1755 and a < 3320: 
-    #     os.system("color 0f")           #youmu	        b
-    #     isBlackConsole = not isBlackConsole
-    elif not isBlackConsole and a >= 1715 and a < 3320: 
+    elif not isBlackConsole and a >= 1765 and a < 3323: 
         os.system("color 0f")           #youmu	        b
         isBlackConsole = not isBlackConsole
-    elif isBlackConsole     and a >= 1685 and a < 1715 : 
+    elif isBlackConsole     and a >= 1686 and a < 1765 : 
         os.system("color f0")           #flandre 	    w 
         isBlackConsole = not isBlackConsole
-    elif not isBlackConsole and a >= 1260 and a < 1685 : 
+    elif not isBlackConsole and a >= 1263 and a < 1686 : 
         os.system("color 0f")           #sakuya	        b   
         isBlackConsole = not isBlackConsole
-    elif isBlackConsole     and a >= 823 and a < 1260 : 
+    elif isBlackConsole     and a >= 823 and a < 1263 : 
         os.system("color f0")           #Patchouli      w
         isBlackConsole = not isBlackConsole
-    elif not isBlackConsole and a >= 444 and a < 823 : 
+    elif not isBlackConsole     and a >= 444 and a < 823 : 
         os.system("color 0f")           #Marisa 	    b	
         isBlackConsole = not isBlackConsole 
+        os.system("title BadApple.exe")
 
     mouse.scroll(0, -int((asciiVideoHeight + 6)/3)) #scroll to next frame(Scroll function scrolls in a 1:3 line ratio)
     if(aError >= 1) :#frame error correction
